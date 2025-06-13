@@ -192,3 +192,25 @@ return average;
 const evens=[2,4,1,5,7,8];
 const even_value = evenAverage(evens);
 console.log('average of even number:',   even_value);
+
+
+//finding duplicates
+
+const my_String = [ 'apple', 'banana', 'apple', 'orange', 'banana', 'kiwi', 'kiwi', 'kiwi'];
+
+const my_Array = [1, 2, 3, 4, 5, 1, 2, 3];
+function findDuplicates(arr) {
+//  console.log('Array:', arr);
+const uniqueItems = [];
+ for(const item of arr) {
+  if (uniqueItems.includes(item)== false) {
+    uniqueItems.push(item);
+  }
+}
+return uniqueItems;
+
+}
+
+
+const duplicates = findDuplicates(my_Array);
+console.log('Duplicates:', duplicates);
