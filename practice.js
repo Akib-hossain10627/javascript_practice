@@ -1,3 +1,5 @@
+
+//reverse an array using for loop
 const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
 const reversedColors = [];
 
@@ -7,7 +9,7 @@ for (let i = colors.length - 1; i >= 0; i--) {
 
 console.log(reversedColors);
 
-
+//Find all even numbers in an array using for loop
 const numbers = [12, 98, 5, 41, 23, 78, 46];
 const evenNumbers = [];
 
@@ -21,7 +23,7 @@ console.log(evenNumbers);
 
 
 
-
+//add all the names in an array using for of loop
 var names = ['Tom', 'Tim', 'Tin', 'Tik'];
 let result = '';
 
@@ -33,7 +35,7 @@ console.log(result);
 
 
 
-
+//Reverse a string using split, reverse and join methods
 const statement = 'I am a hard working person';
 
 const reversed = statement.split(' ').reverse().join(' ');
@@ -211,6 +213,126 @@ return uniqueItems;
 
 }
 
-
 const duplicates = findDuplicates(my_Array);
 console.log('Duplicates:', duplicates);
+
+
+//Write a function to convert inches to feet.
+function inchToFeet(inch) {
+    const feet = inch / 12;
+    return feet;
+}
+
+// onther version of this one
+function inchToFeet2(inch) {
+    const feetFraction = inch / 12;
+    const feetNumber = parseInt(feetFraction);
+    const inchRemaining = inch % 12;
+    const result = feetNumber + ' ft ' + inchRemaining + ' inch.'
+    return result;
+}
+
+const shuvoHeight = inchToFeet(75);
+console.log(shuvoHeight);
+const shuvoHeight2 = inchToFeet2(75);
+console.log(shuvoHeight2);
+
+//Write a function to convert miles
+function mileToKilometer (mile){
+    const kilo = mile * 1.60934;
+    return kilo;
+}
+
+const mileToKilo = mileToKilometer(5);
+console.log(mileToKilo);
+
+//Write a function to convert kilometers to miles.
+function kiloMeterToMiles(kilo){
+    const mile = kilo * 0.621371;
+    return mile;
+}
+const kiloToMile = kiloMeterToMiles(8);
+console.log(kiloToMile);
+
+//Write a function to convert temperature from Celsius to Fahrenheit.
+
+function celsiusToFahrenheit(celsius) {
+    const fahrenheit = (celsius * 9/5) + 32;
+    return fahrenheit;
+}
+const celsiusToFahr = celsiusToFahrenheit(25);
+console.log(celsiusToFahr);
+
+//Write a function to convert temperature from Fahrenheit to Celsius.
+
+function fahrenheitToCelsius(fahrenheit) {
+    const celsius = (fahrenheit - 32) * 5/9;
+    return celsius;
+}
+const fahrenheitToCel = fahrenheitToCelsius(77);
+console.log(fahrenheitToCel);
+
+
+//You are given an array of numbers. Count how many times the a number is repeated in the array.
+function countRepeatedNumbers(arr) {
+    const count = {};
+    for (const num of arr) {
+       if (count[num]) {
+        count[num]++;
+       }
+   else{
+      count[num]=1;
+   }
+    }
+return count;
+  }
+
+const numbersArray = [1, 2, 3, 2, 4, 5, 1, 3, 2,6];
+const repeatedCount = countRepeatedNumbers(numbersArray);
+console.log(repeatedCount);
+
+
+//Write a function to count the number of vowels in a string.
+
+function countVowels(str) {
+  const vowels = 'aeiouAEIOU';
+  let count = 0;
+
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+const inputString = "Hello World";
+const vowelCount = countVowels(inputString);
+console.log(`Number of vowels in "${inputString}":`, vowelCount);
+
+//Write a function to find the longest word in a given string.
+
+
+function findLongestWord(sentence) {
+  const words = sentence.split(' ');
+  let longestWord = '';
+
+  for (const word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
+
+const inputSentence = "The quick brown fox jumps over the lazy dog";
+const longestWord = findLongestWord(inputSentence);
+console.log(`Longest word in the sentence: "${inputSentence}" is "${longestWord}"`);
+
+
+//Generate a random number between 10 to 20.
+
+function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+const randomNumber = generateRandomNumber(10, 20);
+console.log(`Random number between 10 and 20: ${randomNumber}`);
