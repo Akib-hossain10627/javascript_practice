@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>connnecting js with html</h1>
+    </header>
+    <main id="main-content">
+        <h1 id="ul">
+            what is dom?
+        </h1>
+        <ul id="topic-list">
+            <li class="ul-list">dom</li>
+            <li class="ul-list">dom-manipulation</li>
+            <li class="ul-list">dom-switch</li>
+        </ul>
+    </main>
+    <script>
+
+        const titlechanged = document.getElementById('ul');
+        // titlechanged.innerText = 'text changed by js';
+
+        const list = document.getElementsByClassName('ul-list');
+        for (const lists of list) {
+            // console.log(lists.innerText);
+        }
+    </script>
+    <script src="dom.js"></script>
+</body>
+
+</html>

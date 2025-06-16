@@ -336,3 +336,5 @@ function generateRandomNumber(min, max) {
 }
 const randomNumber = generateRandomNumber(10, 20);
 console.log(`Random number between 10 and 20: ${randomNumber}`);
+
+

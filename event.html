@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+
+<body>
+    <h3 id="handle-bar">heading need to removed</h3>
+    <p id="handle-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam nemo saepe repellendus
+        modi! Tempora magnam amet voluptatibus alias suscipit est.</p>
+    <h3 id="handle-status">dom events</h3>
+
+    <p id="text">input text</p>
+    <input id="input" type="text">
+    <button id="btn-update" disabled>update</button>
+    <br>
+    <br>
+
+    <button onclick="console.log(4)">click me</button>
+    <button onclick="document.body.style.backgroundColor='yellow'">make yellow</button>
+    <button onclick="makeRed()">make red</button>
+    <button id="purple">make purple</button>
+    <button id="pink">make Pink</button>
+    <button id="green">make green</button>
+    <button onclick="handleOnClick()">changed on click</button>
+    <button id="event">addEventListener</button>
+    <script>
+
+        //focus
+        document.getElementById('input').addEventListener('focus', function () {
+            console.log('dom events focused')
+        });
+        //blurr
+        document.getElementById('input').addEventListener('blur', function () {
+            console.log('dom events blur')
+        });
+        //keydown
+        document.getElementById('input').addEventListener('keydown', function () {
+            console.log(event.target.value)
+        });
+        //keyup
+        document.getElementById('input').addEventListener('keyup', function (event) {
+            const text = event.target.value;
+            const removed = document.getElementById('btn-update');
+            if (text === 'a') {
+                removed.removeAttribute('disabled');
+            }
+            else {
+                removed.setAttribute('disabled', true);
+            }
+        });
+
+        document.getElementById('input').addEventListener('keyup', function () {
+
+        });
+
+
+
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputbar = document.getElementById('handle-bar');
+            inputbar.style.display = 'none';
+        });
+
+
+
+
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputField = document.getElementById('input');
+            const inputText = inputField.value;
+            const p = document.getElementById('text');
+            p.innerText = inputText;
+            inputField.value = '';
+        })
+
+    </script>
+    <script src="event.js"></script>
+
+</body>
+
+</html>
